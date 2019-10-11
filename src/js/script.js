@@ -1,6 +1,6 @@
 const btn = document.querySelectorAll('.btn');
-let display = document.querySelector('.disp');
-let arrArgument = [];
+let monitor = document.querySelector('.monitor');
+let arr = [];
 
 for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener('click', f);
@@ -8,9 +8,9 @@ for (let i = 0; i < btn.length; i++) {
 
 function f() {
     if (this.value === "=") {
-        display.value = eval(arrArgument.join(''));
+        monitor.value = eval(arr.join(''));
     } else {
-        arrArgument.push(this.value);
-        display.value = arrArgument.join('');
+        arr.push(this.value);
+        monitor.value = arr.join('');
     }
 }
