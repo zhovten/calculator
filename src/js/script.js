@@ -3,14 +3,20 @@ let monitor = document.querySelector('.monitor');
 let arr = [];
 
 for (let i = 0; i < btn.length; i++) {
-    btn[i].addEventListener('click', f);
+    btn[i].addEventListener('click', click);
 }
 
-function f() {
-    if (this.value === "=") {
-        monitor.value = eval(arr.join(''));
+function click() {
+    if (this.value === "C") {
+        monitor.value = 0;
+        arr = [];
     } else {
-        arr.push(this.value);
-        monitor.value = arr.join('');
+        if (this.value === "=") {
+            monitor.value = eval(arr.join(''));
+            arr = [monitor.value];
+        } else {
+            arr.push(this.value);
+            monitor.value = arr.join('');
+        }
     }
 }
