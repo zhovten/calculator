@@ -15,8 +15,10 @@ function click() {
             monitor.value = eval(arr.join(''));
             arr = [monitor.value];
         } else {
-            arr.push(this.value);
-            monitor.value = arr.join('');
+            if (arr.length < 8 || Number.isNaN(parseInt(this.value)) || isNaN(parseInt(arr[arr.length - 1]))) {
+                arr.push(this.value);
+                monitor.value = arr.join('');
+            }
         }
     }
 }
